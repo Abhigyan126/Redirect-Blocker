@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Redirect Blocker",
+    "version": "1.0",
+    "description": "Block unwanted redirects with permanent blocklist and domain management",
+    "permissions": [
+        "declarativeNetRequest",
+        "storage",
+        "tabs",
+        "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
